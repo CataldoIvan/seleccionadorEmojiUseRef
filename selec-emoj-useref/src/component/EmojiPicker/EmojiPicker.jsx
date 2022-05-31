@@ -52,14 +52,17 @@ const EmojiPicker=({refInput})=>{
  }*/
 const handleClickEmoji=(e)=>{
   
-    console.dir(e.target.childNodes[0]);
+    console.dir(e.target);
+    console.dir(e.target.attributes[0].value.slice(0,-1).length);
+    console.dir(e.target.attributes[0]);
     const cursorPo=refInput.current.selectionStart
     const text=refInput.current.value;
     const prev=text.slice(0,cursorPo)
     const next=text.slice(cursorPo)
-    refInput.current.value=prev+e.target.innerText+next;
-    refInput.current.selectionStart=prev+e.target.innerText.length
-    refInput.current.selectionEnd=prev+e.target.innerText.length;
+    console.log(`previo es ${prev} ,siguiente es ${next} y el de la posicoin es ${cursorPo}`);
+    refInput.current.value=prev+e.target.textContent+next;
+    refInput.current.selectionStart=cursorPo+e.target.attributes[0].value.slice(0,-7).length
+    refInput.current.selectionEnd=refInput.current.selectionStart
     refInput.current.focus()
 
 }
@@ -73,7 +76,7 @@ return <>
  <div>{emojis.map((emoji,index)=>(
      <>
      {index<=18?
-     <button key={emoji.html}
+     <button key={emoji.html} dataHtml={emoji.html}
      onClick={handleClickEmoji}>
      {emoji.emoji}
      </button>
