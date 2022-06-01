@@ -1,22 +1,5 @@
 export const data=[
-    {
-        "emoji": "☹",
-        "name": "frowning face",
-        "shortname": ":frowning_face:",
-        "unicode": "2639",
-        "html": "&#9785;",
-        "category": "Smileys & Emotion (face-concerned)",
-        "order": ""
-        },
-        {
-        "emoji": "☠",
-        "name": "skull and crossbones",
-        "shortname": ":skull_crossbones:",
-        "unicode": "2620",
-        "html": "&#9760;",
-        "category": "Smileys & Emotion (face-negative)",
-        "order": "81"
-        },
+   
         {
         "emoji": "🤗",
         "name": "hugging face",

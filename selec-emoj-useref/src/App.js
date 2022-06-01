@@ -6,13 +6,12 @@ import { useRef,forwardRef } from 'react';
 
 function App() {
   const refInput=useRef(null)
-  const handleOnClick=()=>{
-    refInput.current.focus()
-  }
+  
   return (
     <div className="App">
-      <input ref={refInput}/>
-      <button onClick={handleOnClick}>Click</button>
+       <h2>Escribi,busca y selecciona Emoticones </h2>
+      <textarea style={{"height":"80px","width":"300px"}} ref={refInput}/>
+      <br />
      <EmojiPicker refInput={refInput}/>
      
     </div>
